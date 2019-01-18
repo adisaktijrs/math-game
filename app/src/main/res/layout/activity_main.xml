@@ -256,4 +256,21 @@
         app:layout_constraintTop_toBottomOf="@+id/btn8"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/waktu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="00:00"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/angka2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toEndOf="@+id/hasil"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702" />
+
 </android.support.constraint.ConstraintLayout>
