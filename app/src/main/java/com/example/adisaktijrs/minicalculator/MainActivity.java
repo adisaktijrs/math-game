@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
     Random rand = new Random();
     int skorAkhir = 0;
 
+    public static int ang1;
+    public static int ang2;
+    public static int tambah;
+    public static int digitAkhir;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +57,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                int ang1 = rand.nextInt(10);
-                int ang2 = rand.nextInt(10);
-                int tambah = ang1 + ang2;
-                final int digitAkhir = tambah % 10;
+                btnMulai.setVisibility(View.INVISIBLE);
+
+                ang1 = rand.nextInt(10);
+                ang2 = rand.nextInt(10);
+                tambah = ang1 + ang2;
+                digitAkhir = tambah % 10;
 
                 angka1.setText(String.valueOf(ang1));
                 angka2.setText(String.valueOf(ang2));
+
+                //kruang tambah bbutton, btn0 belum didefinisikan
+
 
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -74,10 +84,13 @@ public class MainActivity extends AppCompatActivity {
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
                         }
 
-                        int ang1 = rand.nextInt(10);
-                        int ang2 = rand.nextInt(10);
-                        int tambah = ang1 + ang2;
-                        final int digitAkhir = tambah % 10;
+                        ang1 = rand.nextInt(10);
+                        ang2 = rand.nextInt(10);
+                        tambah = ang1 + ang2;
+                        digitAkhir = tambah % 10;
+
+                        angka1.setText(String.valueOf(ang1));
+                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -97,10 +110,13 @@ public class MainActivity extends AppCompatActivity {
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
                         }
 
-                        int ang1 = rand.nextInt(10);
-                        int ang2 = rand.nextInt(10);
-                        int tambah = ang1 + ang2;
-                        final int digitAkhir = tambah % 10;
+                        ang1 = rand.nextInt(10);
+                        ang2 = rand.nextInt(10);
+                        tambah = ang1 + ang2;
+                        digitAkhir = tambah % 10;
+
+                        angka1.setText(String.valueOf(ang1));
+                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -120,10 +136,13 @@ public class MainActivity extends AppCompatActivity {
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
                         }
 
-                        int ang1 = rand.nextInt(10);
-                        int ang2 = rand.nextInt(10);
-                        int tambah = ang1 + ang2;
-                        final int digitAkhir = tambah % 10;
+                        ang1 = rand.nextInt(10);
+                        ang2 = rand.nextInt(10);
+                        tambah = ang1 + ang2;
+                        digitAkhir = tambah % 10;
+
+                        angka1.setText(String.valueOf(ang1));
+                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -143,10 +162,13 @@ public class MainActivity extends AppCompatActivity {
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
                         }
 
-                        int ang1 = rand.nextInt(10);
-                        int ang2 = rand.nextInt(10);
-                        int tambah = ang1 + ang2;
-                        final int digitAkhir = tambah % 10;
+                        ang1 = rand.nextInt(10);
+                        ang2 = rand.nextInt(10);
+                        tambah = ang1 + ang2;
+                        digitAkhir = tambah % 10;
+
+                        angka1.setText(String.valueOf(ang1));
+                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -166,10 +188,13 @@ public class MainActivity extends AppCompatActivity {
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
                         }
 
-                        int ang1 = rand.nextInt(10);
-                        int ang2 = rand.nextInt(10);
-                        int tambah = ang1 + ang2;
-                        final int digitAkhir = tambah % 10;
+                        ang1 = rand.nextInt(10);
+                        ang2 = rand.nextInt(10);
+                        tambah = ang1 + ang2;
+                        digitAkhir = tambah % 10;
+
+                        angka1.setText(String.valueOf(ang1));
+                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -188,10 +213,13 @@ public class MainActivity extends AppCompatActivity {
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
                         }
 
-                        int ang1 = rand.nextInt(10);
-                        int ang2 = rand.nextInt(10);
-                        int tambah = ang1 + ang2;
-                        final int digitAkhir = tambah % 10;
+                        ang1 = rand.nextInt(10);
+                        ang2 = rand.nextInt(10);
+                        tambah = ang1 + ang2;
+                        digitAkhir = tambah % 10;
+
+                        angka1.setText(String.valueOf(ang1));
+                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -210,10 +238,13 @@ public class MainActivity extends AppCompatActivity {
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
                         }
 
-                        int ang1 = rand.nextInt(10);
-                        int ang2 = rand.nextInt(10);
-                        int tambah = ang1 + ang2;
-                        final int digitAkhir = tambah % 10;
+                        ang1 = rand.nextInt(10);
+                        ang2 = rand.nextInt(10);
+                        tambah = ang1 + ang2;
+                        digitAkhir = tambah % 10;
+
+                        angka1.setText(String.valueOf(ang1));
+                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -232,10 +263,13 @@ public class MainActivity extends AppCompatActivity {
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
                         }
 
-                        int ang1 = rand.nextInt(10);
-                        int ang2 = rand.nextInt(10);
-                        int tambah = ang1 + ang2;
-                        final int digitAkhir = tambah % 10;
+                        ang1 = rand.nextInt(10);
+                        ang2 = rand.nextInt(10);
+                        tambah = ang1 + ang2;
+                        digitAkhir = tambah % 10;
+
+                        angka1.setText(String.valueOf(ang1));
+                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -254,10 +288,13 @@ public class MainActivity extends AppCompatActivity {
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
                         }
 
-                        int ang1 = rand.nextInt(10);
-                        int ang2 = rand.nextInt(10);
-                        int tambah = ang1 + ang2;
-                        final int digitAkhir = tambah % 10;
+                        ang1 = rand.nextInt(10);
+                        ang2 = rand.nextInt(10);
+                        tambah = ang1 + ang2;
+                        digitAkhir = tambah % 10;
+
+                        angka1.setText(String.valueOf(ang1));
+                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
