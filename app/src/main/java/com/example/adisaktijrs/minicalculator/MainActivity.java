@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView skor;
     private TextView waktuCountDown;
     private CountDownTimer mCountDownTimer;
-    private long mTimeLeftinMillis = 10000;
     private TextView angka1;
     private TextView angka2;
     private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnMulai;
 
     Random rand = new Random();
     int skorAkhir = 0;
+    long countDownPeriod;
 
     public static int ang1;
     public static int ang2;
@@ -65,23 +65,16 @@ public class MainActivity extends AppCompatActivity {
                 ang2 = rand.nextInt(10);
                 tambah = ang1 + ang2;
                 digitAkhir = tambah % 10;
+                skorAkhir = 0;
+                skor.setText("Skor: " + String.valueOf(skorAkhir));
 
                 angka1.setText(String.valueOf(ang1));
                 angka2.setText(String.valueOf(ang2));
 
-                mCountDownTimer = new CountDownTimer(mTimeLeftinMillis, 1000) {
-                    @Override
-                    public void onTick(long l) {
-                        updateCount();
-                    }
+                //kruang tambah button, btn0 belum didefinisika
+                countDownPeriod = 7000;
+                addCountDownTimer();
 
-                    @Override
-                    public void onFinish() {
-
-                    }
-                }.start();
-
-                //kruang tambah button, btn0 belum didefinisikan
                 btn0.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -90,11 +83,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir -= 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -117,11 +110,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir = skorAkhir - 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -144,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir = skorAkhir - 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -171,11 +164,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir = skorAkhir - 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -198,11 +191,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir = skorAkhir - 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -225,11 +218,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir = skorAkhir - 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -251,11 +244,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir = skorAkhir - 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -277,11 +270,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir = skorAkhir - 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -303,11 +296,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir = skorAkhir - 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -329,11 +322,11 @@ public class MainActivity extends AppCompatActivity {
                         if (digitAkhir == angBtn1) {
                             skorAkhir += 10;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis += 5000;
+                            newCounter();
                         } else {
                             skorAkhir = skorAkhir - 5;
                             skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            mTimeLeftinMillis -= 2000;
+
                         }
 
                         ang1 = rand.nextInt(10);
@@ -346,20 +339,41 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-
-
             }
         });
 
     }
 
+    private void addCountDownTimer() {
+        countDownPeriod += 3000;
+        mCountDownTimer = new CountDownTimer(countDownPeriod,100) {
+            @Override
+            public void onTick(long l) {
+                updateCount();
+                countDownPeriod = l;
+            }
+
+            @Override
+            public void onFinish() {
+                btnMulai.setVisibility(View.VISIBLE);
+            }
+        }.start();
+    }
+
     private void updateCount() {
-        int minutes = (int) (mTimeLeftinMillis / 1000) / 60;
-        int seconds = (int) (mTimeLeftinMillis / 1000) % 60;
+        int minutes = (int) (countDownPeriod / 1000) / 60;
+        int seconds = (int) (countDownPeriod / 1000) % 60;
 
         String timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d", minutes, seconds);
+        System.out.println(timeLeftFormatted);
 
         waktuCountDown.setText(timeLeftFormatted);
 
     }
+
+    private void newCounter() {
+        mCountDownTimer.cancel();
+        addCountDownTimer();
+    }
+
 }

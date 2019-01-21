@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Button" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="AppTheme2.Button" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/title_color</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
 </resources>
