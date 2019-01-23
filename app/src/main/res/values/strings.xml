@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Math Adding Game</string>
+    <string name="tanda_tangan">Math Addition Game \n PKL Lumbung Media LP3 UNNES 2019</string>
+    <string name="petunjuk">Petunjuk game</string>
 </resources>

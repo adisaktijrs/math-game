@@ -1,15 +1,16 @@
 package com.example.adisaktijrs.minicalculator;
 
 import android.os.CountDownTimer;
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.Locale;
 import java.util.Random;
@@ -26,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
     Random rand = new Random();
     int skorAkhir = 0;
     long countDownPeriod;
+    boolean btnKlik = false;
 
     public static int ang1;
     public static int ang2;
     public static int tambah;
     public static int digitAkhir;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +56,12 @@ public class MainActivity extends AppCompatActivity {
         angka1 = (TextView) findViewById(R.id.angka1);
         angka2 = (TextView) findViewById(R.id.angka2);
 
+        addAlertInfo();
+
         btnMulai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                btnKlik = true;
                 btnMulai.setVisibility(View.INVISIBLE);
 
                 ang1 = rand.nextInt(10);
@@ -80,104 +83,127 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         int angBtn1 = 0;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir -= 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
-
                     }
                 });
-
 
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         int angBtn1 = 1;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir = skorAkhir - 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
-
 
                 btn2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         int angBtn1 = 2;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir = skorAkhir - 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
-
                     }
                 });
-
 
                 btn3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         int angBtn1 = 3;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir = skorAkhir - 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -188,23 +214,30 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         int angBtn1 = 4;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir = skorAkhir - 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -215,23 +248,30 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         int angBtn1 = 5;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir = skorAkhir - 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -241,23 +281,30 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         int angBtn1 = 6;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir = skorAkhir - 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -267,23 +314,30 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         int angBtn1 = 7;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir = skorAkhir - 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -293,23 +347,30 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         int angBtn1 = 8;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir = skorAkhir - 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
@@ -319,29 +380,55 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         int angBtn1 = 9;
 
-                        if (digitAkhir == angBtn1) {
-                            skorAkhir += 10;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-                            newCounter();
+                        if(btnKlik == true) {
+                            //
+                            if (digitAkhir == angBtn1) {
+                                skorAkhir += 10;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                newCounter();
+                            } else {
+                                skorAkhir -= 5;
+                                skor.setText("Skor: " + String.valueOf(skorAkhir));
+                                decCounter();
+                            }
+
+                            ang1 = rand.nextInt(10);
+                            ang2 = rand.nextInt(10);
+                            tambah = ang1 + ang2;
+                            digitAkhir = tambah % 10;
+
+                            angka1.setText(String.valueOf(ang1));
+                            angka2.setText(String.valueOf(ang2));
                         } else {
-                            skorAkhir = skorAkhir - 5;
-                            skor.setText("Skor: " + String.valueOf(skorAkhir));
-
+                            //
+                            Toast toast = Toast.makeText(MainActivity.this, "Klik Mulai dahulu", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-
-                        ang1 = rand.nextInt(10);
-                        ang2 = rand.nextInt(10);
-                        tambah = ang1 + ang2;
-                        digitAkhir = tambah % 10;
-
-                        angka1.setText(String.valueOf(ang1));
-                        angka2.setText(String.valueOf(ang2));
 
                     }
                 });
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //action_settings
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                addAlertInfo();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void addCountDownTimer() {
@@ -355,7 +442,27 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                infoSkor(skorAkhir);
                 btnMulai.setVisibility(View.VISIBLE);
+                btnKlik = false;
+            }
+        }.start();
+    }
+
+    private void decCountDownTimer() {
+        countDownPeriod -= 2000;
+        mCountDownTimer = new CountDownTimer(countDownPeriod, 100) {
+            @Override
+            public void onTick(long l) {
+                updateCount();
+                countDownPeriod = l;
+            }
+
+            @Override
+            public void onFinish() {
+                infoSkor(skorAkhir);
+                btnMulai.setVisibility(View.VISIBLE);
+                btnKlik = false;
             }
         }.start();
     }
@@ -375,5 +482,69 @@ public class MainActivity extends AppCompatActivity {
         mCountDownTimer.cancel();
         addCountDownTimer();
     }
+
+    private void decCounter() {
+        mCountDownTimer.cancel();
+        decCountDownTimer();
+    }
+
+    public void addAlertInfo() {
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+        View mView = getLayoutInflater().inflate(R.layout.dialog_info, null);
+        Button mTutup = (Button) mView.findViewById(R.id.btnTutup);
+
+        mBuilder.setView(mView);
+        final AlertDialog dialog = mBuilder.create();
+        dialog.show();
+        mTutup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
+    }
+
+    public void infoSkor(int skor) {
+        AlertDialog.Builder nBuilder = new AlertDialog.Builder(MainActivity.this);
+        View nView = getLayoutInflater().inflate(R.layout.skor, null);
+        Button nTutup = (Button) nView.findViewById(R.id.btn_tutup);
+        TextView nTeks = (TextView) nView.findViewById(R.id.text_Jumlah);
+        TextView ket = (TextView) nView.findViewById(R.id.teks_ket);
+
+        nTeks.setText(String.valueOf(skor));
+        ket.setText(ketSkor(skor));
+
+        nBuilder.setView(nView);
+        final AlertDialog dialog = nBuilder.create();
+        dialog.show();
+        nTutup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    dialog.cancel();
+
+            }
+        });
+        //angka1.setText(String.valueOf(ang1));
+
+    }
+
+    public String ketSkor(int skor) {
+        if (skor <= 50) {
+            return "Kemampuan anda setara dengan siswa SD haha";
+        } else if (skor <= 100 ) {
+            return "Kemampuan anda setara dengan siswa SMP. Cukup";
+        } else if (skor <= 150 ) {
+            return "Kemampuan anda setara dengan siswa SMA. Lumayan";
+        } else if (skor <= 250 ) {
+            return "Kemampuan anda setara dengan Sarjana biasa";
+        } else if (skor <= 350 ) {
+            return "Kemampuan anda setara dengan Sarjana Komputer";
+        } else if (skor <= 400 ) {
+            return "Kemampuan anda setara dengan lulusan Magister";
+        } else {
+            return "Suhu Tingkat 1, setara mahasiswa MARS University";
+        }
+    }
+
 
 }
