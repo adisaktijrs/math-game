@@ -1,5 +1,6 @@
 package com.example.adisaktijrs.minicalculator;
 
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 angka2.setText(String.valueOf(ang2));
 
                 //kruang tambah button, btn0 belum didefinisika
-                countDownPeriod = 7000;
+                countDownPeriod = 10000;
                 addCountDownTimer();
 
                 btn0.setOnClickListener(new View.OnClickListener() {
@@ -432,7 +433,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addCountDownTimer() {
-        countDownPeriod += 3000;
+        countDownPeriod += 500;
         mCountDownTimer = new CountDownTimer(countDownPeriod,100) {
             @Override
             public void onTick(long l) {
@@ -449,8 +450,9 @@ public class MainActivity extends AppCompatActivity {
         }.start();
     }
 
+
     private void decCountDownTimer() {
-        countDownPeriod -= 2000;
+        countDownPeriod -= 1000;
         mCountDownTimer = new CountDownTimer(countDownPeriod, 100) {
             @Override
             public void onTick(long l) {
@@ -530,19 +532,21 @@ public class MainActivity extends AppCompatActivity {
 
     public String ketSkor(int skor) {
         if (skor <= 50) {
-            return "Kemampuan anda setara dengan siswa SD haha";
+            return "Kemampuan anda setara dengan siswa SD. Teruskan belajar dan berlatih!";
         } else if (skor <= 100 ) {
-            return "Kemampuan anda setara dengan siswa SMP. Cukup";
+            return "Kemampuan anda setara dengan siswa SMP. Cukup baik, belajar lagi";
         } else if (skor <= 150 ) {
             return "Kemampuan anda setara dengan siswa SMA. Lumayan";
+        } else if (skor <= 200 ) {
+            return "Kemampuan anda setara dengan Sarjana umum";
         } else if (skor <= 250 ) {
-            return "Kemampuan anda setara dengan Sarjana biasa";
-        } else if (skor <= 350 ) {
             return "Kemampuan anda setara dengan Sarjana Komputer";
-        } else if (skor <= 400 ) {
+        } else if (skor <= 300 ) {
             return "Kemampuan anda setara dengan lulusan Magister";
+        } else if (skor <= 350 ) {
+                return "Kemampuan anda setara dengan seorang Doktor";
         } else {
-            return "Suhu Tingkat 1, setara mahasiswa MARS University";
+            return "Suhu Tingkat 1, setara mahasiswa S1 MARS University";
         }
     }
 
